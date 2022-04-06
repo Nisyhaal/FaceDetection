@@ -1,6 +1,6 @@
 import cv2 as cv
 
-# Loading the frontal face cascade from local obtained from https://github.com/opencv/opencv/tree/master/data
+# Loading the frontal face cascade obtained from https://github.com/opencv/opencv/tree/master/data
 faceCascade = cv.CascadeClassifier(cv.samples.findFile('data/haarcascades/haarcascade_frontalface_alt.xml'))
 
 stream = cv.VideoCapture(0)
