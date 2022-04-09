@@ -1,4 +1,4 @@
-from Functions import *
+from function import *
 
 # Loading the frontal face & eyes cascade classifiers stored in local obtained from https://github.com/opencv/opencv/tree/master/data
 faceCascadeClassifier = cascadeClassifierLoader('data/haarcascades/haarcascade_frontalface_alt.xml')
