@@ -4,19 +4,19 @@ from Functions import *
 faceCascadeClassifier = cascadeClassifierLoader('data/haarcascades/haarcascade_frontalface_alt.xml')
 eyesCascadeClassifier = cascadeClassifierLoader('data/haarcascades/haarcascade_eye_tree_eyeglasses.xml')
 
-stream = cv.VideoCapture(0)
+cap = cv.VideoCapture(0)
 
 # Getting width & height of frame for video output configuration
-frameWidth = int(stream.get(3))
-frameHeight = int(stream.get(4))
+frameWidth = int(cap.get(3))
+frameHeight = int(cap.get(4))
 
 # Video output configuration
-videoOutput = cv.VideoWriter('output.avi', cv.VideoWriter_fourcc('M', 'J', 'P', 'G'), 10, (frameWidth, frameHeight))
+videoOutput = cv.VideoWriter('Video_Output.avi', cv.VideoWriter_fourcc('M', 'J', 'P', 'G'), 10, (frameWidth, frameHeight))
 
 # Drawing a rectangular bounding box around detected faces and eyes
 while True:
     # Read USB camera
-    ret, frame = stream.read()
+    ret, frame = cap.read()
 
     # Image processing
     processedFrame = frameProcessor(frame)
